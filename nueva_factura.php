@@ -22,11 +22,7 @@
 			<h4><i class='glyphicon glyphicon-edit'></i> Nueva Factura</h4>
 		</div>
 		<div class="panel-body">
-		<?php 
-			include("modal/buscar_productos.php");
-			include("modal/registro_clientes.php");
-			include("modal/registro_productos.php");
-		?>
+		
 			<form class="form-horizontal" role="form" id="datos_factura">
 				<div class="form-group row">
 				  <label for="nombre_cliente" class="col-md-1 control-label">Cliente</label>

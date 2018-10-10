@@ -29,10 +29,7 @@
 		
 			
 		
-			<?php
-			include("modal/registro_productos.php");
-			include("modal/editar_productos.php");
-			?>
+			
 			<form class="form-horizontal" role="form" id="datos_cotizacion">
 				
 						<div class="form-group row">

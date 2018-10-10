@@ -1,10 +1,4 @@
-<?php
 
-
-require_once("classes/Login.php");
-
-
-    ?>
 	<!DOCTYPE html>
 <html lang="es">
 <head>
