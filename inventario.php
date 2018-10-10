@@ -28,7 +28,7 @@
 		<div class="panel-body">
 		
 			
-			
+		
 			<?php
 			include("modal/registro_productos.php");
 			include("modal/editar_productos.php");
