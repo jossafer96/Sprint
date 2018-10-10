@@ -8,11 +8,11 @@
 	
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <?php include("cabecera.php");?>
   </head>
-  <body>
+  <body >
 	<?php
 	include("barra_navegacion.php");
 	?>  
@@ -83,7 +83,7 @@
 				</div>
 			</form>	
 			
-		<div id="resultados" class='col-md-12' style="margin-top:10px"></div><!-- Carga los datos ajax -->			
+		<div id="resultados" class='col-md-12' style="margin-top:10px"></div>
 		</div>
 	</div>		
 		  <div class="row-fluid">

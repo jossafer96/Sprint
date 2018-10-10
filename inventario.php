@@ -51,8 +51,8 @@
 				
 				
 			</form>
-				<div id="resultados"></div><!-- Carga los datos ajax -->
-				<div class='outer_div'></div><!-- Carga los datos ajax -->
+				<div id="resultados"></div>
+				<div class='outer_div'></div>
 			
 		
 	
@@ -67,6 +67,6 @@
 	<?php
 	include("pie_pagina.php");
 	?>
-	<script type="text/javascript" src="js/productos.js"></script>
+	
   </body>
 </html>

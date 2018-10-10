@@ -46,8 +46,8 @@
 				
 				
 			</form>
-				<div id="resultados"></div><!-- Carga los datos ajax -->
-				<div class='outer_div'></div><!-- Carga los datos ajax -->
+				<div id="resultados"></div>
+				<div class='outer_div'></div>
 			</div>
 		</div>	
 		
@@ -56,7 +56,6 @@
 	<?php
 	include("pie_pagina.php");
 	?>
-	<script type="text/javascript" src="js/VentanaCentrada.js"></script>
-	<script type="text/javascript" src="js/facturas.js"></script>
+
   </body>
 </html>
