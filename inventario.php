@@ -36,6 +36,7 @@
 		
 			<?php
 			include("modal/registro_productos.php");
+			include("modal/editar_productos.php");
 			?>
 		
 			
@@ -80,6 +81,25 @@ $( "#guardar_producto" ).submit(function( event ) {
   event.preventDefault();
 })
 
+$( "#editar_producto" ).submit(function( event ) {
+  $('#actualizar_datos').attr("disabled", true);
+  
+ var parametros = $(this).serialize();
+	 $.ajax({
+			type: "POST",
+			url: "ajax/editar_producto.php",
+			data: parametros,
+			 beforeSend: function(objeto){
+				$("#resultados_ajax2").html("Mensaje: Cargando...");
+			  },
+			success: function(datos){
+			$("#resultados_ajax2").html(datos);
+			$('#actualizar_datos').attr("disabled", false);
+			load(1);
+		  }
+	});
+  event.preventDefault();
+})
 
 	function obtener_datos(id){
 			var codigo_producto = $("#codigo_producto"+id).val();

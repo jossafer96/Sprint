@@ -6,6 +6,19 @@
 	require_once ("../config/conexion.php");
 	
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
+	if (isset($_GET['id'])){
+		$id_producto=intval($_GET['id']);
+		
+			if ($delete1=mysqli_query($con,"DELETE FROM products WHERE id_producto='".$id_producto."'")){
+			?>
+			Datos eliminados exitosamente.
+			
+				<?php
+				}
+		}
+		
+		
+		
 	
 	if($action == 'ajax'){
 		
