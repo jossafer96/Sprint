@@ -73,7 +73,45 @@ $( "#guardar_usuario" ).submit(function( event ) {
   event.preventDefault();
 })
 
+$( "#editar_usuario" ).submit(function( event ) {
+  $('#actualizar_datos2').attr("disabled", true);
+  
+ var parametros = $(this).serialize();
+	 $.ajax({
+			type: "POST",
+			url: "ajax/editar_usuario.php",
+			data: parametros,
+			 beforeSend: function(objeto){
+				$("#resultados_ajax2").html("Mensaje: Cargando...");
+			  },
+			success: function(datos){
+			$("#resultados_ajax2").html(datos);
+			$('#actualizar_datos2').attr("disabled", false);
+			load(1);
+		  }
+	});
+  event.preventDefault();
+})
 
+$( "#editar_password" ).submit(function( event ) {
+  $('#actualizar_datos3').attr("disabled", true);
+  
+ var parametros = $(this).serialize();
+	 $.ajax({
+			type: "POST",
+			url: "ajax/editar_password.php",
+			data: parametros,
+			 beforeSend: function(objeto){
+				$("#resultados_ajax3").html("Mensaje: Cargando...");
+			  },
+			success: function(datos){
+			$("#resultados_ajax3").html(datos);
+			$('#actualizar_datos3').attr("disabled", false);
+			load(1);
+		  }
+	});
+  event.preventDefault();
+})
 	function get_user_id(id){
 		$("#user_id_mod").val(id);
 	}

@@ -20,8 +20,25 @@
 
 	
 		
+			function eliminar (id)
+		{
+			var q= $("#q").val();
+		if (confirm("Realmente deseas eliminar el usuario")){	
+		$.ajax({
+        type: "GET",
+        url: "./ajax/buscar_usuarios.php",
+        data: "id="+id,"q":q,
+		 beforeSend: function(objeto){
+			$("#resultados").html("Mensaje: Cargando...");
+		  },
+        success: function(datos){
+		$("#resultados").html(datos);
+		load(1);
+		}
+			});
+		}
+		}
 		
 		
 		
 		
-

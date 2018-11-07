@@ -23,10 +23,36 @@
 	if($action == 'ajax'){
 		
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-		$sql="SELECT * FROM  products order by id_producto desc LIMIT 0,10";
-		$query = mysqli_query($con, $sql);
+		 $aColumns = array('codigo_producto', 'nombre_producto');
+		 $sTable = "products";
+		 $sWhere = "";
+		if ( $_GET['q'] != "" )
+		{
+			$sWhere = "WHERE (";
+			for ( $i=0 ; $i<count($aColumns) ; $i++ )
+			{
+				$sWhere .= $aColumns[$i]." LIKE '%".$q."%' OR ";
+			}
+			$sWhere = substr_replace( $sWhere, "", -3 );
+			$sWhere .= ')';
+		}
+		$sWhere.=" order by id_producto desc";
 		
-		if (10>0){
+		$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
+		$per_page = 10; 
+		$adjacents  = 4;
+		$offset = ($page - 1) * $per_page;
+		
+		$count_query   = mysqli_query($con, "SELECT count(*) AS numrows FROM $sTable  $sWhere");
+		$row= mysqli_fetch_array($count_query);
+		$numrows = $row['numrows'];
+		$total_pages = ceil($numrows/$per_page);
+		$reload = './productos.php';
+		
+		$sql="SELECT * FROM  $sTable $sWhere LIMIT $offset,$per_page";
+		$query = mysqli_query($con, $sql);
+	
+		if ($numrows>0){
 			
 			?>
 			<div class="table-responsive">

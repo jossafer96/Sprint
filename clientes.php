@@ -59,6 +59,6 @@
 	<?php
 	include("pie_pagina.php");
 	?>
-
+	<script type="text/javascript" src="js/clientes.js"></script>
   </body>
 </html>
