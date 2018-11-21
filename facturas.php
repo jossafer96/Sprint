@@ -19,6 +19,7 @@
 <html lang="en" >
   <head>
     <?php include("cabecera.php");?>
+     <title><?php echo $title;?></title>
   </head>
   <body >
 	<?php

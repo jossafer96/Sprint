@@ -12,12 +12,13 @@
 	$active_productos="active";
 	$active_clientes="";
 	$active_usuarios="";	
-	$title="Productos | Tapices S. de R.L.";
+	$title="Inventario | Tapices S. de R.L.";
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <?php include("cabecera.php");?>
+    <title><?php echo $title;?></title>
   </head>
   <body>
 	<?php
