@@ -35,7 +35,7 @@
 			<?php
 			include("modal/registro_usuarios.php");
 			include("modal/editar_usuarios.php");
-			include("modal/cambiar_password.php");
+			
 			?>
 			
 				<div id="resultados"></div>
