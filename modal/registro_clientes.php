@@ -33,6 +33,14 @@
 				  
 				</div>
 			  </div>
+
+			  <div class="form-group">
+				<label for="RTN" class="col-sm-3 control-label">RTN</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="RTN" name="RTN" >
+				  
+				</div>
+			  </div>
 			  
 			  <div class="form-group">
 				<label for="direccion" class="col-sm-3 control-label">Dirección</label>

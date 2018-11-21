@@ -43,9 +43,9 @@
 					  <input type="text" class="form-control input-sm" id="nombre_cliente" placeholder="Selecciona un cliente" required>
 					  <input id="id_cliente" type='hidden'>	
 				  </div>
-				  <label for="tel1" class="col-md-1 control-label">Telefono</label>
+				  <label for="tel1" class="col-md-1 control-label">RTN</label>
 							<div class="col-md-2">
-								<input type="text" class="form-control input-sm" id="tel1" placeholder="Teléfono" readonly>
+								<input type="text" class="form-control input-sm" id="tel1" placeholder="RTN" readonly>
 							</div>
 					<label for="mail" class="col-md-1 control-label">Email</label>
 							<div class="col-md-3">
@@ -136,7 +136,7 @@
 								event.preventDefault();
 								$('#id_cliente').val(ui.item.id_cliente);
 								$('#nombre_cliente').val(ui.item.nombre_cliente);
-								$('#tel1').val(ui.item.telefono_cliente);
+								$('#tel1').val(ui.item.RTN);
 								$('#mail').val(ui.item.email_cliente);
 																
 								

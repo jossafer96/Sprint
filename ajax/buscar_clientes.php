@@ -81,6 +81,7 @@
 					<th>Nombre</th>
 					<th>Teléfono</th>
 					<th>Email</th>
+					<th>RTN</th>
 					<th>Dirección</th>
 					<th>Estado</th>
 					<th>Agregado</th>
@@ -93,6 +94,7 @@
 						$nombre_cliente=$row['nombre_cliente'];
 						$telefono_cliente=$row['telefono_cliente'];
 						$email_cliente=$row['email_cliente'];
+						$RTN=$row['RTN'];
 						$direccion_cliente=$row['direccion_cliente'];
 						$status_cliente=$row['status_cliente'];
 						if ($status_cliente==1){$estado="Activo";}
@@ -104,6 +106,7 @@
 					<input type="hidden" value="<?php echo $nombre_cliente;?>" id="nombre_cliente<?php echo $id_cliente;?>">
 					<input type="hidden" value="<?php echo $telefono_cliente;?>" id="telefono_cliente<?php echo $id_cliente;?>">
 					<input type="hidden" value="<?php echo $email_cliente;?>" id="email_cliente<?php echo $id_cliente;?>">
+					<input type="hidden" value="<?php echo $RTN;?>" id="RTN<?php echo $id_cliente;?>">
 					<input type="hidden" value="<?php echo $direccion_cliente;?>" id="direccion_cliente<?php echo $id_cliente;?>">
 					<input type="hidden" value="<?php echo $status_cliente;?>" id="status_cliente<?php echo $id_cliente;?>">
 					
@@ -112,6 +115,7 @@
 						<td><?php echo $nombre_cliente; ?></td>
 						<td ><?php echo $telefono_cliente; ?></td>
 						<td><?php echo $email_cliente;?></td>
+						<td><?php echo $RTN;?></td>
 						<td><?php echo $direccion_cliente;?></td>
 						<td><?php echo $estado;?></td>
 						<td><?php echo $date_added;?></td>

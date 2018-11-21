@@ -60,7 +60,8 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
                 <span style="color: #34495e;font-size:14px;font-weight:bold"><?php echo NOMBRE_EMPRESA;?></span>
 				<br><?php echo DIRECCION_EMPRESA;?><br> 
 				Teléfono: <?php echo TELEFONO_EMPRESA;?><br>
-				Email: <?php echo EMAIL_EMPRESA;?>
+				Email: <?php echo EMAIL_EMPRESA;?><br>
+				RTN: <?php echo RTN_EMPRESA;?>
                 
             </td>
 			<td style="width: 25%;text-align:right">
@@ -89,6 +90,8 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 				echo $rw_cliente['telefono_cliente'];
 				echo "<br> Email: ";
 				echo $rw_cliente['email_cliente'];
+				echo "<br> RTN: ";
+				echo $rw_cliente['RTN'];
 			?>
 			
 		   </td>

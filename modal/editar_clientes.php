@@ -33,6 +33,14 @@
 				 <input type="email" class="form-control" id="mod_email" name="mod_email">
 				</div>
 			  </div>
+
+			  <div class="form-group">
+				<label for="mod_RTN" class="col-sm-3 control-label">RTN</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="mod_RTN" name="mod_RTN" >
+				</div>
+			  </div>
+
 			  <div class="form-group">
 				<label for="mod_direccion" class="col-sm-3 control-label">Dirección</label>
 				<div class="col-sm-8">

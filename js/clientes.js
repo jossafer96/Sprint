@@ -85,15 +85,18 @@ $( "#editar_cliente" ).submit(function( event ) {
 			var nombre_cliente = $("#nombre_cliente"+id).val();
 			var telefono_cliente = $("#telefono_cliente"+id).val();
 			var email_cliente = $("#email_cliente"+id).val();
+			var RTN = $("#RTN"+id).val();
 			var direccion_cliente = $("#direccion_cliente"+id).val();
 			var status_cliente = $("#status_cliente"+id).val();
 	
 			$("#mod_nombre").val(nombre_cliente);
 			$("#mod_telefono").val(telefono_cliente);
 			$("#mod_email").val(email_cliente);
+			$("#mod_RTN").val(RTN);
 			$("#mod_direccion").val(direccion_cliente);
 			$("#mod_estado").val(status_cliente);
 			$("#mod_id").val(id);
+		
 		
 		}
 	
