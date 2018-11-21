@@ -10,6 +10,8 @@
 	/* Connect To Database*/
 	include("../../config/db.php");
 	include("../../config/conexion.php");
+	
+	
 	$session_id= session_id();
 	$sql_count=mysqli_query($con,"select * from tmp where session_id='".$session_id."'");
 	$count=mysqli_num_rows($sql_count);
@@ -38,6 +40,7 @@
     
     try
     {
+    	
         // init HTML2PDF
         $html2pdf = new HTML2PDF();
         // display the full page
@@ -45,6 +48,7 @@
         // convert
         $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
         // send the PDF
+        
         $html2pdf->Output('Factura.pdf');
     }
     catch(HTML2PDF_exception $e) {

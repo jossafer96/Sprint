@@ -41,13 +41,38 @@
 		
 	}
 	if($action == 'ajax'){
-		
-         $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-		
-		$sql="SELECT * FROM  clientes order by nombre_cliente LIMIT 0,10";
+	  $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
+		 $aColumns = array('nombre_cliente');//Columnas de busqueda
+		 $sTable = "clientes";
+		 $sWhere = "";
+		if ( $_GET['q'] != "" )
+		{
+			$sWhere = "WHERE (";
+			for ( $i=0 ; $i<count($aColumns) ; $i++ )
+			{
+				$sWhere .= $aColumns[$i]." LIKE '%".$q."%' OR ";
+			}
+			$sWhere = substr_replace( $sWhere, "", -3 );
+			$sWhere .= ')';
+		}
+		$sWhere.=" order by nombre_cliente";
+		include 'pagination.php'; //include pagination file
+		//pagination variables
+		$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
+		$per_page = 10; //how much records you want to show
+		$adjacents  = 4; //gap between pages after number of adjacents
+		$offset = ($page - 1) * $per_page;
+		//Count the total number of row in your table*/
+		$count_query   = mysqli_query($con, "SELECT count(*) AS numrows FROM $sTable  $sWhere");
+		$row= mysqli_fetch_array($count_query);
+		$numrows = $row['numrows'];
+		$total_pages = ceil($numrows/$per_page);
+		$reload = './clientes.php';
+		//main query to fetch the data
+		$sql="SELECT * FROM  $sTable $sWhere LIMIT $offset,$per_page";
 		$query = mysqli_query($con, $sql);
-		
-		if (10>0){
+		//loop through fetched data
+		if ($numrows>0){
 			
 			?>
 			<div class="table-responsive">
@@ -100,7 +125,9 @@
 				}
 				?>
 				<tr>
-					<td colspan=7><span class="pull-right"></span></td>
+					<td colspan=7><span class="pull-right"><?
+					 echo paginate($reload, $page, $total_pages, $adjacents);
+					?></span></td>
 				</tr>
 			  </table>
 			</div>

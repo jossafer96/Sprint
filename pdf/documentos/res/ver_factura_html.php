@@ -53,7 +53,7 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
         <tr>
 
             <td style="width: 25%; color: #444444;">
-               <img style="width: 100%;" src="../../img/logo.jpg" alt="Logo"><br> 
+                <img style="width: 100%;" src="../../img/logo.jpg" alt="Logo"><br>
                 
             </td>
 			<td style="width: 50%; color: #34495e;font-size:12px;text-align:center">
@@ -112,7 +112,7 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 				echo $rw_user['firstname']." ".$rw_user['lastname'];
 			?>
 		   </td>
-		  <td style="width:25%;"><?php echo date("d/m/Y", strtotime($fecha_factura));?></td>
+		  <td style="width:25%;"><?php echo date("d/m/Y");?></td>
 		   <td style="width:40%;" >
 				<?php 
 				if ($condiciones==1){echo "Efectivo";}
@@ -140,16 +140,16 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 <?php
 $nums=1;
 $sumador_total=0;
-$sql=mysqli_query($con, "select * from products, detalle_factura, facturas where products.id_producto=detalle_factura.id_producto and detalle_factura.numero_factura=facturas.numero_factura and facturas.id_factura='".$id_factura."'");
-
+$sql=mysqli_query($con, "select * from products, tmp where products.id_producto=tmp.id_producto and tmp.session_id='".$session_id."'");
 while ($row=mysqli_fetch_array($sql))
 	{
+	$id_tmp=$row["id_tmp"];
 	$id_producto=$row["id_producto"];
 	$codigo_producto=$row['codigo_producto'];
-	$cantidad=$row['cantidad'];
+	$cantidad=$row['cantidad_tmp'];
 	$nombre_producto=$row['nombre_producto'];
 	
-	$precio_venta=$row['precio_venta'];
+	$precio_venta=$row['precio_tmp'];
 	$precio_venta_f=number_format($precio_venta,2);//Formateo variables
 	$precio_venta_r=str_replace(",","",$precio_venta_f);//Reemplazo las comas
 	$precio_total=$precio_venta_r*$cantidad;
@@ -172,7 +172,8 @@ while ($row=mysqli_fetch_array($sql))
         </tr>
 
 	<?php 
-
+	//Insert en la tabla detalle_cotizacion
+	$insert_detail=mysqli_query($con, "INSERT INTO detalle_factura VALUES ('','$numero_factura','$id_producto','$cantidad','$precio_venta_r')");
 	
 	$nums++;
 	}
@@ -204,4 +205,3 @@ while ($row=mysqli_fetch_array($sql))
 	  
 
 </page>
-

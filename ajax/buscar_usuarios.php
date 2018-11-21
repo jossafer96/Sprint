@@ -32,11 +32,39 @@
 	}
 	if($action == 'ajax'){
 		
+     // escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-		$sql="SELECT * FROM  users order by user_id desc LIMIT 0,10";
+		 $aColumns = array('firstname', 'lastname');//Columnas de busqueda
+		 $sTable = "users";
+		 $sWhere = "";
+		if ( $_GET['q'] != "" )
+		{
+			$sWhere = "WHERE (";
+			for ( $i=0 ; $i<count($aColumns) ; $i++ )
+			{
+				$sWhere .= $aColumns[$i]." LIKE '%".$q."%' OR ";
+			}
+			$sWhere = substr_replace( $sWhere, "", -3 );
+			$sWhere .= ')';
+		}
+		$sWhere.=" order by user_id desc";
+		include 'pagination.php'; //include pagination file
+		//pagination variables
+		$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
+		$per_page = 10; //how much records you want to show
+		$adjacents  = 4; //gap between pages after number of adjacents
+		$offset = ($page - 1) * $per_page;
+		//Count the total number of row in your table*/
+		$count_query   = mysqli_query($con, "SELECT count(*) AS numrows FROM $sTable  $sWhere");
+		$row= mysqli_fetch_array($count_query);
+		$numrows = $row['numrows'];
+		$total_pages = ceil($numrows/$per_page);
+		$reload = './usuarios.php';
+		//main query to fetch the data
+		$sql="SELECT * FROM  $sTable $sWhere LIMIT $offset,$per_page";
 		$query = mysqli_query($con, $sql);
-		
-		if (10>0){
+		//loop through fetched data
+		if ($numrows>0){
 			
 			?>
 			<div class="table-responsive">
@@ -74,14 +102,17 @@
 						
 					<td ><span class="pull-right">
 					<a href="#" class='btn btn-default' title='Editar usuario' onclick="obtener_datos('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
-					<a href="#" class='btn btn-default' title='Borrar usuario' onclick="eliminar('<?php echo $user_id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
+					<a href="#" class='btn btn-default' title='Cambiar contraseña' onclick="get_user_id('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal3"><i class="glyphicon glyphicon-cog"></i></a>
+					<a href="#" class='btn btn-default' title='Borrar usuario' onclick="eliminar('<? echo $user_id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
 						
 					</tr>
 					<?php
 				}
 				?>
 				<tr>
-					<td colspan=9><span class="pull-right"></span></td>
+					<td colspan=9><span class="pull-right"><?
+					 echo paginate($reload, $page, $total_pages, $adjacents);
+					?></span></td>
 				</tr>
 			  </table>
 			</div>

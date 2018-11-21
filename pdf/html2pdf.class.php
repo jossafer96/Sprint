@@ -23,6 +23,16 @@ if (!defined('__CLASS_HTML2PDF__')) {
 
     class HTML2PDF
     {
+        protected function _tag_open_SCRIPT($param)
+{
+    return false ; // or return true, same behaviour
+}
+
+protected function _tag_close_SCRIPT($param)
+{
+    return false ;
+}
+
         /**
          * HTML2PDF_myPdf object, extends from TCPDF
          * @var HTML2PDF_myPdf
