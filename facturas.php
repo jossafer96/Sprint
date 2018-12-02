@@ -25,11 +25,15 @@
 	<?php
 	include("barra_navegacion.php");
 	?>  
+	<div class="canvas-wrap">
+  		<canvas id="canvas"></canvas>
+	</div>
     <div class="container">
 	<div class="panel panel-info">
-		<div class="panel-heading">
+		<div class="panel-heading" style="background-color: #142256;color: white">
 			<h4><i class='glyphicon glyphicon-edit'></i> Nueva Factura</h4>
 		</div>
+		
 		<div class="panel-body">
 			<?php 
 			
@@ -110,7 +114,8 @@
 			
 		<div id="resultados" class='col-md-12' style="margin-top:10px"></div>
 		</div>
-	</div>		
+	</div>	
+		
 		  <div class="row-fluid">
 			<div class="col-md-12">
 			
@@ -120,12 +125,14 @@
 			</div>	
 		 </div>
 	</div>
+	
 	<hr>
 	<?php
 	include("pie_pagina.php");
 	?>
 	<script type="text/javascript" src="js/VentanaCentrada.js"></script>
 	<script type="text/javascript" src="js/nueva_factura.js"></script>
+	<script type="text/javascript" src="js/controlador.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script>

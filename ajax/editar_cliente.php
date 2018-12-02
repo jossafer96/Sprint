@@ -23,7 +23,7 @@
 		
 		$id_cliente=intval($_POST['mod_id']);
 		$sql="UPDATE clientes SET nombre_cliente='".$nombre."', telefono_cliente='".$telefono."', email_cliente='".$email."', RTN='".$RTN."', direccion_cliente='".$direccion."', status_cliente='".$estado."' WHERE id_cliente='".$id_cliente."'";
-		echo $sql;
+		
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Cliente ha sido actualizado satisfactoriamente.";

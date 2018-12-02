@@ -1,0 +1,51 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Work Sans", sans-serif;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f8f8f8;
+}
+
+.header {
+  
+  // background-image: linear-gradient(to bottom, rgba(#715, .5), transparent);
+  color: #ddf;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 0.1ch;
+  font-weight: 300;
+  margin: 0 0 1rem;
+}
+
+.content {
+  min-height: 200px;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.canvas-wrap {
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+canvas {
+  display: block;
+}
+

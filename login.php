@@ -36,7 +36,7 @@ if ($login->isUserLoggedIn() == true) {
   <title>Tapices S. de R.L. | Login</title>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  
+  <link rel=icon href='img/logo-icon.png' sizes="32x32" type="image/png">
    <link href="css/login.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body >

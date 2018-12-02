@@ -26,10 +26,12 @@
 	<?php
 	include("barra_navegacion.php");
 	?>
-	
+	<div class="canvas-wrap">
+  		<canvas id="canvas"></canvas>
+	</div>
     <div class="container">
 	<div class="panel panel-info">
-		<div class="panel-heading">
+		<div class="panel-heading" style="background-color: #142256;color: white">
 		    <div class="btn-group pull-right">
 				<button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoCliente"><span class="glyphicon glyphicon-plus" ></span> Nuevo Cliente</button>
 			</div>
@@ -79,5 +81,6 @@
 	include("pie_pagina.php");
 	?>
 	<script type="text/javascript" src="js/clientes.js"></script>
+	<script type="text/javascript" src="js/controlador.js"></script>
   </body>
 </html>
