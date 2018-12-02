@@ -5,14 +5,14 @@
 	require_once ("../config/conexion.php");
 	include('is_logged.php');
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
-	if (isset($_GET['id'])){
+if (isset($_GET['id'])){
 		$user_id=intval($_GET['id']);
-		
 			if ($delete1=mysqli_query($con,"DELETE FROM users WHERE user_id='".$user_id."'")){
 			?>
 			<div class="alert alert-success alert-dismissible" role="alert">
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			  <strong>Aviso!</strong> Datos eliminados exitosamente.
+			  
 			</div>
 			<?php 
 		}else {
@@ -25,7 +25,6 @@
 			
 		}
 			
-		
 		
 		
 		
@@ -103,7 +102,7 @@
 					<td ><span class="pull-right">
 					<a href="#" class='btn btn-default' title='Editar usuario' onclick="obtener_datos('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
 					<a href="#" class='btn btn-default' title='Cambiar contraseña' onclick="get_user_id('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal3"><i class="glyphicon glyphicon-cog"></i></a>
-					<a href="#" class='btn btn-default' title='Borrar usuario' onclick="eliminar('<? echo $user_id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
+					<a href="#" class='btn btn-default' title='Borrar usuario' onclick="eliminar('<?php echo $user_id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
 						
 					</tr>
 					<?php

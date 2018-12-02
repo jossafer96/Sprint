@@ -16,13 +16,13 @@
 			  <div class="form-group">
 				<label for="firstname" class="col-sm-3 control-label">Nombres</label>
 				<div class="col-sm-8">
-				  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Nombres" required>
+				  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Nombres" required pattern="[A-Za-z]{5,40}" title="Letras Mayusculas y Minusculas Tamaño mínimo: 5. Tamaño máximo: 40">
 				</div>
 			  </div>
 			  <div class="form-group">
 				<label for="lastname" class="col-sm-3 control-label">Apellidos</label>
 				<div class="col-sm-8">
-				  <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellidos" required>
+				  <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellidos" required pattern="[A-Za-z]{5,40}" title="Letras Mayusculas y Minusculas Tamaño mínimo: 5. Tamaño máximo: 40">
 				</div>
 			  </div>
 			  <div class="form-group">

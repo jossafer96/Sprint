@@ -16,7 +16,7 @@
 			  <div class="form-group">
 				<label for="mod_nombre" class="col-sm-3 control-label">Nombre</label>
 				<div class="col-sm-8">
-				  <input type="text" class="form-control" id="mod_nombre" name="mod_nombre"  required>
+				  <input type="text" class="form-control" id="mod_nombre" name="mod_nombre"  required pattern="[A-Za-z]{5,40}" title="Letras Mayusculas y Minusculas Tamaño mínimo: 5. Tamaño máximo: 40">
 					<input type="hidden" name="mod_id" id="mod_id">
 				</div>
 			  </div>
