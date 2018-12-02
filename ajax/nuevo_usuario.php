@@ -14,7 +14,12 @@ include('is_logged.php');
                
 				$user_password_hash = password_hash($user_password, PASSWORD_DEFAULT);
 					
-               
+                $sql = "SELECT * FROM users WHERE user_name = '" . $user_name . "' OR user_email = '" . $user_email . "';";
+                $query_check_user_name = mysqli_query($con,$sql);
+				$query_check_user=mysqli_num_rows($query_check_user_name);
+                if ($query_check_user == 1) {
+                    $errors[] = "Lo sentimos , el nombre de usuario ó la dirección de correo electrónico ya está en uso.";
+                } else {
 					
                     $sql = "INSERT INTO users (firstname, lastname, user_name, user_password_hash, user_email, date_added)
                             VALUES('".$firstname."','".$lastname."','" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "','".$date_added."');";
@@ -28,7 +33,7 @@ include('is_logged.php');
                         $errors[] = "Lo sentimos , el registro falló. Por favor, regrese y vuelva a intentarlo.";
                     }
                 
-            
+            }
     
 		
 		if (isset($errors)){

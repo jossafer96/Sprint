@@ -13,13 +13,21 @@
 		$direccion=mysqli_real_escape_string($con,(strip_tags($_POST["direccion"],ENT_QUOTES)));
 		$estado=intval($_POST['estado']);
 		$date_added=date("Y-m-d H:i:s");
-		$sql="INSERT INTO clientes (nombre_cliente, telefono_cliente, email_cliente, direccion_cliente, status_cliente, date_added,RTN) VALUES ('$nombre','$telefono','$email','$direccion','$estado','$date_added','$RTN')";
-		$query_new_insert = mysqli_query($con,$sql);
-			if ($query_new_insert){
-				$messages[] = "Cliente ha sido ingresado satisfactoriamente.";
-			} else{
-				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);
-			}
+
+		 $sql = "SELECT * FROM clientes WHERE email_cliente = '" . $email . "' OR RTN = '" . $RTN . "';";
+                $query_check_user_name = mysqli_query($con,$sql);
+				$query_check_user=mysqli_num_rows($query_check_user_name);
+                if ($query_check_user == 1) {
+                    $errors[] = "Lo sentimos , el correo electronico del cliente ó el RTN ya está en uso.";
+                } else {
+						$sql="INSERT INTO clientes (nombre_cliente, telefono_cliente, email_cliente, direccion_cliente, status_cliente, date_added,RTN) VALUES ('$nombre','$telefono','$email','$direccion','$estado','$date_added','$RTN')";
+						$query_new_insert = mysqli_query($con,$sql);
+						if ($query_new_insert){
+							$messages[] = "Cliente ha sido ingresado satisfactoriamente.";
+						} else{
+							$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);
+						}
+				}
 		} else {
 			$errors []= "Error desconocido.";
 		}
