@@ -67,7 +67,7 @@ if (isset($_GET['id'])){
 			
 			?>
 			<div class="table-responsive">
-			  <table class="table">
+			  <table class="table table-striped">
 				<tr  class="info">
 					<th>ID</th>
 					<th>Nombres</th>

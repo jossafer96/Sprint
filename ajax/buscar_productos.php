@@ -56,7 +56,7 @@
 			
 			?>
 			<div class="table-responsive">
-			  <table class="table">
+			  <table class="table table-striped">
 				<tr  class="info">
 					<th>Código</th>
 					<th>Producto</th>

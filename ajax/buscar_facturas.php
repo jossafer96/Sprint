@@ -65,7 +65,7 @@
 			echo mysqli_error($con);
 			?>
 			<div class="table-responsive">
-			  <table class="table">
+			  <table class="table table-striped">
 				<tr  class="info">
 					<th>#</th>
 					<th>Fecha</th>

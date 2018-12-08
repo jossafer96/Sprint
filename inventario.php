@@ -29,7 +29,7 @@
 	</div>
     <div class="container">
 	<div class="panel panel-info">
-		<div class="panel-heading" style="background-color: #142256;color: white">
+		<div class="panel-heading" style="background-color: #2980b9;color: white">
 		    <div class="btn-group pull-right">
 				<button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Nuevo Producto</button>
 			</div>

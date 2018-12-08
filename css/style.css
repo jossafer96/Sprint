@@ -32,6 +32,16 @@ h1 {
   margin: 0 0 1rem;
 }
 
+#logo-barra-navegacion{
+    height: 50px;
+    width: 100px;
+}
+
+.navbar-default{
+    background-color: #11a130;
+    border-color: #11a130;
+}
+
 .content {
   min-height: 200px;
   padding: 2rem;

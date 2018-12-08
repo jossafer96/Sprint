@@ -76,7 +76,7 @@
 			
 			?>
 			<div class="table-responsive">
-			  <table class="table">
+			  <table class="table table-striped">
 				<tr  class="info">
 					<th>Nombre</th>
 					<th>Teléfono</th>

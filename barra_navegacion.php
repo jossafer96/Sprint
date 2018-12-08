@@ -12,6 +12,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">Tapices S. de R.L. </a>
+      <img id="logo-barra-navegacion" class="img img-responsive" src="img/logo1.png" alt="Logo" style="heig">
     </div>
 
     

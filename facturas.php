@@ -30,7 +30,7 @@
 	</div>
     <div class="container">
 	<div class="panel panel-info" >
-		<div class="panel-heading" style="background-color: #142256;color: white">
+		<div class="panel-heading" style="background-color: #2980b9;color: white">
 			<h4><i class='glyphicon glyphicon-edit'></i> Nueva Factura</h4>
 		</div>
 		

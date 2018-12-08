@@ -22,7 +22,7 @@ $delete=mysqli_query($con, "DELETE FROM tmp WHERE id_tmp='".$id_tmp."'");
 }
 
 ?>
-<table class="table">
+<table class="table table-striped">
 <tr>
 	<th class='text-center'>CODIGO</th>
 	<th class='text-center'>CANT.</th>
