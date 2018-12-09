@@ -1,0 +1,36 @@
+
+.container1{
+    text-align: center;
+    border-radius: 1rem;
+    color: black;
+    animation: animation 1s linear infinite;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+        margin-left: 0.2rem;
+}
+#my-clock {
+    float: left;
+    font-size: 30px;
+    margin: 0;
+}
+#my-date{
+    font-weight: bolder;
+    font-size: 1vw;
+}
+
+@keyframes animation{
+    0% {
+        border-top-color: green;
+        border-bottom-color: yellow;
+        border-right-color: steelblue;
+        border-left-color: red;
+    }
+
+    100% {
+        border-top-color: red;
+        border-bottom-color: steelblue;
+        border-right-color: yellow;
+        border-left-color: green;
+    }
+}

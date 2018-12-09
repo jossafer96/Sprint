@@ -1,15 +1,11 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
+	
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
         header("location: ../../login.php");
 		exit;
     }
-	/* Connect To Database*/
+
 	include("../../config/db.php");
 	include("../../config/conexion.php");
 	$id_factura= intval($_GET['id_factura']);
@@ -37,7 +33,7 @@
     try
     {
         // init HTML2PDF
-        $html2pdf = new HTML2PDF('P', 'LETTER', 'es', true, 'UTF-8', array(0, 0, 0, 0));
+        $html2pdf = new HTML2PDF();
         // display the full page
         $html2pdf->pdf->SetDisplayMode('fullpage');
         // convert

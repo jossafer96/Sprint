@@ -176,7 +176,7 @@ while ($row=mysqli_fetch_array($sql))
 
 	<?php 
 	//Insert en la tabla detalle_cotizacion
-	$insert_detail=mysqli_query($con, "INSERT INTO detalle_factura VALUES ('','$numero_factura','$id_producto','$cantidad','$precio_venta_r')");
+	$insert_detail=mysqli_query($con, "INSERT INTO detalle_factura VALUES (null,'".$numero_factura."','".$id_producto."','".$cantidad."','".$precio_venta_r."')");
 	
 	$nums++;
 	}
@@ -211,5 +211,7 @@ while ($row=mysqli_fetch_array($sql))
 
 <?php
 $date=date("Y-m-d H:i:s");
-$insert=mysqli_query($con,"INSERT INTO facturas VALUES ('','$numero_factura','$date','$id_cliente','$id_vendedor','$condiciones','$total_factura','1')");
-$delete=mysqli_query($con,"DELETE FROM tmp WHERE session_id='".$session_id."'");
+$sql="INSERT INTO facturas VALUES (null,'".$numero_factura."','".$date."','".$id_cliente."','".$id_vendedor."','".$condiciones."','".$total_factura."','1')";
+echo $sql;
+$insert=mysqli_query($con,$sql);
+$delete=mysqli_query($con,"DELETE FROM tmp WHERE session_id='".$session_id."'");?>

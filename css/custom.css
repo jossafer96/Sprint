@@ -1,4 +1,4 @@
-
+ a.noclick { pointer-events: none; } 
 .navbar-default {
   background-color: #142256;
   border-color: #142256;
@@ -23,8 +23,9 @@
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #ecdbff;
-  background-color: #2980b9;
+  color: #ffffff;
+  background-color: #e7bb21a3;
+  border-radius: 30px;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,

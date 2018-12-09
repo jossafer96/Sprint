@@ -13,7 +13,13 @@
 	$active_facturas="";
 	$active_productos="";
 	$active_clientes="active";
-	$active_usuarios="";	
+	if ($_SESSION['user_id']==16){
+                        $active_usuarios='';
+                        $click='';
+                      } else {
+                       $active_usuarios='disabled';
+                       $click='noclick';
+                      }		
 	$title="Clientes | Tapices S. de R.L.";
 ?>
 <!DOCTYPE html>
@@ -103,5 +109,6 @@
 	?>
 	<script type="text/javascript" src="js/clientes.js"></script>
 	<script type="text/javascript" src="js/controlador.js"></script>
+	<script type="text/javascript" src="js/clock.js"></script>
   </body>
 </html>
